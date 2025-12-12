@@ -1,0 +1,37 @@
+#########################################################
+# CORE — Required for Strands Agents + A2A + Bedrock
+#########################################################
+
+strands                  # Core Strands Agent SDK (Agent, @tool)
+# strands-tools            # A2AClientToolProvider for multi-agent chaining
+
+boto3                    # AWS SDK — required for BedrockModel
+botocore                 # AWS signing, networking layer for boto3
+
+python-dotenv            # Loads .env (AWS creds + model id + config)
+
+#########################################################
+# OPTIONAL — Only needed if you run an HTTP UI Adapter
+#########################################################
+
+fastapi                  # Optional: expose /support HTTP endpoint for UI
+uvicorn[standard]        # Run FastAPI adapter
+httpx                    # Adapter → A2A Orchestrator calls (if needed)
+
+#########################################################
+# OPTIONAL — Dev Tools (optional)
+#########################################################
+
+pydantic                 # Useful for request models if adapter uses FastAPI
+pytest
+black
+fastapi
+uvicorn
+strands
+strands-tools
+python-dotenv
+httpx  # sometimes needed for health checks
+strands-agents>=1.0.0
+strands-agents-tools>=0.2.0
+# Optional extras (add as needed)
+ strands-agents-tools[mem0_memory]>=0.2.0
